@@ -1,4 +1,4 @@
-package com.nxyf.consumer;
+package com.nxyf.consumer.direct;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
@@ -14,11 +14,11 @@ import org.springframework.stereotype.Component;
  **/
 @Slf4j
 @Component
-@RabbitListener(queues = {"email.fanout.queue"})
-public class FanoutEmailReceiver {
+@RabbitListener(queues = {"email.direct.queue"})
+public class DirectEmailReceiver {
 
     @RabbitHandler
     public void emailReceiver(String message) {
-        log.info("开始消费邮件----fanout---->{}",message);
+        log.info("开始消费邮件---direct----->{}",message);
     }
 }

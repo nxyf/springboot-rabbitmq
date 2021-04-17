@@ -4,6 +4,7 @@ import com.nxyf.entity.Order;
 import com.nxyf.producer.DirectOrderService;
 import com.nxyf.producer.FanoutOrderService;
 import com.nxyf.producer.OrderSender;
+import com.nxyf.producer.TopicOrderService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,6 +22,9 @@ class SpringbootRabbitmqApplicationTests {
 
     @Autowired
     private DirectOrderService directOrderService;
+
+    @Autowired
+    private TopicOrderService topicOrderService;
 
     @Test
     void contextLoads() {
@@ -40,4 +44,10 @@ class SpringbootRabbitmqApplicationTests {
     void directContextLoads() {
         directOrderService.createOrder();
     }
+
+    @Test
+    void topicContextLoads() {
+        topicOrderService.createOrder();
+    }
 }
+
