@@ -14,11 +14,11 @@ import org.springframework.stereotype.Component;
  **/
 @Slf4j
 @Component
-@RabbitListener(queues = {"sms.fanout.queue"})
-public class FanoutSmsReceiver {
+@RabbitListener(queues = {"email.direct.queue"})
+public class DirectEmailReceiver {
 
     @RabbitHandler
-    public void SmsReceiver(String message) {
-        log.info("开始消费短信---fanout----->{}",message);
+    public void emailReceiver(String message) {
+        log.info("开始消费邮件---direct----->{}",message);
     }
 }
