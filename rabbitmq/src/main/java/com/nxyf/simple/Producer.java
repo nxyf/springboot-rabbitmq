@@ -20,7 +20,7 @@ public class Producer {
         //所有的中间件技术都是基于tcp/ip协议基础上构建新型的协议规范，只不过rabbitmq遵循amqp
         //1.创建连接工程
         ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.setHost("192.168.10.13");
+        connectionFactory.setHost("192.168.10.14");
         connectionFactory.setPort(5672);
         connectionFactory.setUsername("admin");
         connectionFactory.setPassword("admin");
