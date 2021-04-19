@@ -33,6 +33,12 @@ public class TtlConfiguration {
     public Queue ttlDirectSmsQueue() {
         Map<String, Object> args = new HashMap<>();
         args.put("x-message-ttl", 5000);
+        args.put("x-max-length", 5);
+        //设置消息过期后进入死信队列
+        //1.绑定死信交换机
+        args.put("x-dead-letter-exchange", "dead_direct-order-exchange");
+        //2.direct模式，绑定死信队列routingKey
+        args.put("x-dead-letter-routing-key", "dead");
         return new Queue("ttl.direct.queue",true,false,false,args);
     }
 

@@ -1,6 +1,6 @@
 spring:
   rabbitmq:
-    addresses: 192.168.10.17:5672
+    addresses: 10.33.2.127:5672 #192.168.10.17:5672
     username: admin
     password: admin
     virtual-host: /
@@ -10,7 +10,8 @@ spring:
       mandatory: true
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://192.168.10.17:3306/rabbit_test
+    url: jdbc:mysql://10.33.2.127:3306/rabbit_test
+#    url: jdbc:mysql://192.168.10.17:3306/rabbit_test
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root
