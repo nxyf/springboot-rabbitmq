@@ -1,10 +1,7 @@
 package com.nxyf;
 
 import com.nxyf.entity.Order;
-import com.nxyf.producer.DirectOrderService;
-import com.nxyf.producer.FanoutOrderService;
-import com.nxyf.producer.OrderSender;
-import com.nxyf.producer.TopicOrderService;
+import com.nxyf.producer.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,6 +23,14 @@ class SpringbootRabbitmqApplicationTests {
     @Autowired
     private TopicOrderService topicOrderService;
 
+    @Autowired
+    private TtlOrderService ttlOrderService;
+
+
+    @Test
+    void ttlContextLoads() {
+        ttlOrderService.createOrder();
+    }
     @Test
     void contextLoads() {
         Order order = new Order();
